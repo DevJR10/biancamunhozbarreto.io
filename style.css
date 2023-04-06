@@ -34,7 +34,6 @@ img{
    padding: 20px;
    display: flex;
    flex-direction: column;
-   justify-content: center;
    align-items: center;
    gap: 60px;
    height: 100vh;
@@ -115,7 +114,7 @@ p{
    font-size: 2.4rem;
    text-align: center;
    opacity: 0;
-   transition: opacity 0.5s ease-in-out;
+   transition: opacity 0.8s ease-in-out;
 }
 
 .text{
@@ -129,6 +128,7 @@ p{
 }
 
 .pMomentos1{
+   margin-bottom: 80px;
    color: white;
    font-family: 'Courier New', Courier, monospace;
    font-size: 2.4rem;
@@ -147,7 +147,7 @@ p{
    transition: opacity 0.5s ease-in-out;
    border-radius: 6px;
    position: absolute;
-   bottom: 150px;
+   bottom: 200px;
    padding: 10px 25px;
    font-size: 1.1rem;
    background-color: red;
