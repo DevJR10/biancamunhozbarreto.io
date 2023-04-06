@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+*{
+   margin: 0;
+   padding: 0;
+   overflow-y: hidden;
+}
+
+img{
+   width: 370px;
+   height: 300px;
+}
+
+.fundo-tela-initial{
+   background-image: url(imagens/gif-universo.gif);
+   display: block;
+   position: absolute;
+   width: 100%;
+   height: 100vh;
+   overflow-y: hidden;
+   overflow-x: hidden;
+   top: 0;
+   bottom: 0;
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+   opacity: 0.7;
+}
+
+.conteudo-tela-initial{
+   opacity: 1;
+   position: relative;
+   z-index: 2000;
+   padding: 20px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 60px;
+   height: 100vh;
+}
+
+h2{
+   text-align: center;
+   color: white;
+   font-family: 'Roboto Mono', monospace;
+   font-size: 2rem;
+   font-weight: bolder;
+   background-color: rgba(0, 0, 0, 0.425);
+   padding: 7px 15px;
+}
+
+.btn{
+   display: flex;
+   gap:0 40px;
+}
+
+.btn button{
+   background-color: red;
+   color: white;
+   cursor: pointer;
+   font-size: 1rem;
+   font-family: 'Roboto Mono', monospace;
+   padding: 10px 40px;
+}
+
+.fundo1{
+   opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.fundo1.ativo{
+   background-image: url(imagens/fundo2.gif);
+   display: block;
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   z-index: 2000;
+   overflow-y: hidden;
+   overflow-x: hidden;
+   top: 0;
+   bottom: 0;
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+   opacity: 1;
+}
+
+.fundo2{
+   opacity: 0;
+   transition: opacity 1s ease-in-out;
+}
+
+.fundo2.ativo{
+   background-image: url(imagens/fundo7.gif);
+   display: block;
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   z-index: 2000;
+   overflow-y: hidden;
+   overflow-x: hidden;
+   top: 0;
+   bottom: 0;
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+   opacity: 1;
+}
+
+p{
+   color: white;
+   font-family: 'Courier New', Courier, monospace;
+   font-size: 2.4rem;
+   text-align: center;
+   opacity: 0;
+   transition: opacity 0.5s ease-in-out;
+}
+
+.text{
+   gap: 40px 0;
+   padding: 0 20px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   height: 100%;
+}
+
+.pMomentos1{
+   color: white;
+   font-family: 'Courier New', Courier, monospace;
+   font-size: 2.4rem;
+   text-align: center;
+   opacity: 0;
+   transition: opacity 0.5s ease-in-out;
+}
+
+.pMomentos1.ativo{
+   opacity: 1;
+}
+
+.btnConfirmar{
+   opacity: 0;
+   display: none;
+   transition: opacity 0.5s ease-in-out;
+   border-radius: 6px;
+   position: absolute;
+   bottom: 150px;
+   padding: 10px 25px;
+   font-size: 1.1rem;
+   background-color: red;
+   color: white;
+   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+   cursor: pointer;
+}
+
+.btnConfirmar.ativo{
+   opacity: 1;
+   display: block;
+}
+
+.imgsFundo2{
+   transition: opacity 0.5s ease-in-out;
+}
+
+.imgsFundo2.remover{
+   display: none;
+}
