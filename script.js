@@ -68,7 +68,7 @@ function abrirFundo2(){
 
 btnYes.addEventListener('click', () => {
    abrirFundo()
-   setInterval(abrirFundo, 500)
+   setInterval(abrirFundo, 2000)
 })
 
 btnConfirmar.addEventListener('click', () => {

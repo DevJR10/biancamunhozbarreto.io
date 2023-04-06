@@ -7,7 +7,7 @@
 }
 
 img{
-   width: 370px;
+   width: 350px;
    height: 300px;
 }
 
@@ -38,6 +38,7 @@ img{
    align-items: center;
    gap: 60px;
    height: 100vh;
+   margin-bottom: 40px;
 }
 
 h2{
