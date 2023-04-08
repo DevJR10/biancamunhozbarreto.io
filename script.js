@@ -1,7 +1,11 @@
 const fundo1 = document.querySelector('.fundo1')
 const fundo2 = document.querySelector('.fundo2')
 const fundo3= document.querySelector('.fundo3')
+const askBianca= document.querySelector('.askBianca')
+const btn= document.querySelector('.btn')
 const btnYes = document.querySelector('.btnSim')
+const btnNo = document.querySelector('.btnNo')
+const imgInitial = document.querySelector('.imgInitial')
 const btnConfirmar = document.querySelector('.btnConfirmar')
 const btnConfirmar2 = document.querySelector('.btnConfirmar2')
 const p = document.querySelector('.p1')
@@ -131,6 +135,14 @@ let indice = 0
 btnYes.addEventListener('click', () => {
    abrirFundo()
    setInterval(abrirFundo, 4500)
+})
+
+btnNo.addEventListener('click', () => {
+   askBianca.classList.add('ativo')
+   askBianca.innerText = 'Então o que você está fazendo aqui seu tarado(a)?'
+   imgInitial.classList.add('ativo')
+   imgInitial.src = 'imagens/emoji-desconfiado.png'
+   btn.classList.add('ativo')
 })
 
 btnConfirmar.addEventListener('click', () => {
