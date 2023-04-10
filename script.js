@@ -1,11 +1,14 @@
 const fundo1 = document.querySelector('.fundo1')
+const fundoIniciar = document.querySelector('.iniciar')
 const fundo2 = document.querySelector('.fundo2')
 const fundo3= document.querySelector('.fundo3')
 const fundo4= document.querySelector('.fundo4')
 const askBianca= document.querySelector('.askBianca')
-const btn= document.querySelector('.btn')
+const btn = document.querySelector('.btn')
+const comecar = document.querySelector('.comecar')
 const btnYes = document.querySelector('.btnSim')
 const btnNo = document.querySelector('.btnNo')
+const btnNaoEstou = document.querySelector('.btnNaoEstou')
 const imgInitial = document.querySelector('.imgInitial')
 const btnConfirmar = document.querySelector('.btnConfirmar')
 const btnConfirmar2 = document.querySelector('.btnConfirmar2')
@@ -86,10 +89,15 @@ const frasesFundo3 = [
    'É de arrepiar.',
 ]
 
+function iniciar(){
+   audio.play()
+   fundoIniciar.classList.add('ativo')
+   fundoIniciar.style.opacity = 1
+}
+
 
 let i = 0;
 function abrirFundo(){
-   audio.play()
    p.style.opacity = 0;
    fundo1.classList.add('ativo')
    fundo1.style.opacity = 1;
@@ -103,7 +111,7 @@ function abrirFundo(){
       }
       p.style.opacity = 1;
       clearInterval()
-   },5500)
+   },5000)
 }
 
 
@@ -127,7 +135,7 @@ function abrirFundo2(){
       p2.style.opacity = 1;
       imgsFundo2.style.opacity = 1;
       clearInterval()
-   },5500)
+   },5000)
 }
 
 let i3 = 0
@@ -193,8 +201,8 @@ function abrirFundo3(){
       i3++
       if(i3 > frasesFundo3.length && i3 > imgs2.length){
          clearTimeout()
-         imgsFundo3.classList.add('remover')
          abrirFundo4()
+         imgsFundo3.classList.add('remover')
       }
       p4.style.opacity = 1;
       imgsFundo3.style.opacity = 1;
@@ -204,11 +212,14 @@ function abrirFundo3(){
 
 function abrirFundo4(){
    fundo4.classList.add('ativo')
+   fundo4.style.opacity = 1;
 }
 
-btnYes.addEventListener('click', () => {
+btnYes.addEventListener('click', iniciar)
+
+comecar.addEventListener('click', () => {
    abrirFundo()
-   setInterval(abrirFundo, 4500)
+   setInterval(abrirFundo, 4000)
 })
 
 btnNo.addEventListener('click', () => {
@@ -219,9 +230,13 @@ btnNo.addEventListener('click', () => {
    btn.classList.add('ativo')
 })
 
+btnNaoEstou.addEventListener('click', () => {
+   alert('Tente recarregar o site ou troque o navegador.')
+})
+
 btnConfirmar.addEventListener('click', () => {
    abrirFundo2()
-   setInterval(abrirFundo2, 4500)
+   setInterval(abrirFundo2, 4000)
 })
 
 btnConfirmar2.addEventListener('click', () => {
