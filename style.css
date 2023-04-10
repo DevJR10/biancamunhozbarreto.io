@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 *{
    margin: 0;
@@ -136,8 +137,8 @@ h2{
 
 p{
    color: white;
-   font-family: 'Courier New', Courier, monospace;
-   font-size: 2.4rem;
+   font-family: 'Montserrat', sans-serif;
+   font-size: 2rem;
    text-align: center;
    opacity: 0;
    transition: opacity 0.8s ease-in-out;
@@ -156,8 +157,8 @@ p{
 .pMomentos1{
    margin-bottom: 80px;
    color: white;
-   font-family: 'Courier New', Courier, monospace;
-   font-size: 2.4rem;
+   font-family: 'Montserrat', sans-serif;
+   font-size: 2rem;
    text-align: center;
    display: none;
    opacity: 0;
@@ -165,6 +166,7 @@ p{
 }
 
 .pMomentos1.ativo{
+   animation: show-up 1s forwards;
    display: block;
    opacity: 1;
 }
@@ -185,6 +187,7 @@ p{
 }
 
 .btnConfirmar.ativo{
+   animation: show-up 1s forwards;
    opacity: 1;
    display: block;
 }
@@ -204,6 +207,7 @@ p{
 }
 
 .quatorze-frases.ativo{
+   animation: show-bottom 1s forwards;
    margin-bottom: 120px;
    display: block;
    opacity: 1;
@@ -229,6 +233,7 @@ p{
 }
 
 .btnConfirmar2.ativo{
+   animation: show-bottom 1s forwards;
    opacity: 1;
    display: block;
 }
@@ -255,10 +260,96 @@ p{
    opacity: 1;
 }
 
+.e-so-de-lembrar{
+   transition: 0.5s ease-in-out;
+}
+
+.e-so-de-lembrar.remover{
+   display: none;
+}
+
+.p4{
+   opacity: 0;
+   transition: opacity 0.5s ease-in-out;
+}
+
+.p4.ativo{
+   opacity: 1;
+}
+
+.p4.absolute{
+   display: none;
+}
+
+.imgsFundo3.absolute{
+   display: none;
+}
+
+.imgsFundo3{
+   height: 500px;
+   height: 450px;
+   opacity: 0;
+   transition: opacity 0.5s ease-in-out;
+}
+
+.imgsFundo3.ativo{
+   opacity: 1;
+}
+
+.imgsFundo3.remover{
+   display: none;
+}
+
+.fundo4{
+   opacity: 0;
+   transition: opacity 0.5s ease-in-out;
+}
+
+.fundo4.ativo{
+   background-image: url(imagens/fundo3.gif);
+   display: block;
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   z-index: 2000;
+   overflow-y: hidden;
+   overflow-x: hidden;
+   top: 0;
+   bottom: 0;
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+   opacity: 1;
+}
+
 @keyframes show-right {
    from{
       opacity: 0;
       transform: translate3d(-30px,0,0);
+   }
+
+   to{
+      opacity: 1;
+      transform: translate3d(0,0,0);
+   }
+}
+
+@keyframes show-up {
+   from{
+      opacity: 0;
+      transform: translate3d(0,30px,0);
+   }
+
+   to{
+      opacity: 1;
+      transform: translate3d(0,0,0);
+   }
+}
+
+@keyframes show-bottom {
+   from{
+      opacity: 0;
+      transform: translate3d(0,-30px,0);
    }
 
    to{
