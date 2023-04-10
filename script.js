@@ -103,7 +103,7 @@ function abrirFundo(){
       }
       p.style.opacity = 1;
       clearInterval()
-   },2000)
+   },5500)
 }
 
 
@@ -127,7 +127,7 @@ function abrirFundo2(){
       p2.style.opacity = 1;
       imgsFundo2.style.opacity = 1;
       clearInterval()
-   },2000)
+   },5500)
 }
 
 let i3 = 0
@@ -208,7 +208,7 @@ function abrirFundo4(){
 
 btnYes.addEventListener('click', () => {
    abrirFundo()
-   setInterval(abrirFundo, 1000)
+   setInterval(abrirFundo, 4500)
 })
 
 btnNo.addEventListener('click', () => {
@@ -221,7 +221,7 @@ btnNo.addEventListener('click', () => {
 
 btnConfirmar.addEventListener('click', () => {
    abrirFundo2()
-   setInterval(abrirFundo2, 1000)
+   setInterval(abrirFundo2, 4500)
 })
 
 btnConfirmar2.addEventListener('click', () => {
