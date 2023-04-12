@@ -2,7 +2,9 @@ const fundo1 = document.querySelector('.fundo1')
 const fundoIniciar = document.querySelector('.iniciar')
 const fundo2 = document.querySelector('.fundo2')
 const fundo3= document.querySelector('.fundo3')
-const fundo4= document.querySelector('.fundo4')
+const fundo4 = document.querySelector('.fundo4')
+const fundo5 = document.querySelector('.fundo5')
+const fundoVideo= document.querySelector('.fundoVideo')
 const askBianca= document.querySelector('.askBianca')
 const btn = document.querySelector('.btn')
 const comecar = document.querySelector('.comecar')
@@ -16,11 +18,16 @@ const p = document.querySelector('.p1')
 const p2 = document.querySelector('.p2')
 const p3 = document.querySelector('.p3')
 const p4 = document.querySelector('.p4');
+const p5 = document.querySelector('.p5');
+const p6 = document.querySelector('.p6');
+const pFinal = document.querySelector('.pFinal');
 const quatorzeFrases = document.querySelector('.quatorze-frases')
 const imgsFundo2 = document.querySelector('.imgsFundo2')
 const imgsFundo3 = document.querySelector('.imgsFundo3');
 const pMomentos1 = document.querySelector('.pMomentos1')
 const audio = new Audio('imagens/musica.mp3')
+const audio2 = new Audio('imagens/musica.mp3')
+const video = document.querySelector('video')
 
 const frases = [
 'Bom, vamos lá...', 
@@ -35,8 +42,8 @@ const frases = [
 ]
 
 const frases2 = [
-   'Seu aniversário de 18 anos', 
    'As primeiras vezes que fui na sua casa', 
+   'Seu aniversário de 18 anos', 
    'Primeiro casamento que fomos', 
    'Primeira vez no estádio do Corinthians',
    'Primeiro almoço num boteco KKK', 
@@ -57,7 +64,29 @@ const frases3 = [
    'E 3 anos com você'
 ]
 
-const imgs = ['imagens/img1.jfif', 'imagens/img13.jfif', 'imagens/img2.jfif', 'imagens/img12.jfif', 'imagens/img6.jfif', 'imagens/img4.jfif', 'imagens/img3.jfif', 'imagens/img7.jfif', 'imagens/img5.jfif', 'imagens/img8.jfif', 'imagens/img10.jfif', 'imagens/img11.jfif', 'imagens/img9.jfif', 'imagens/agua-de-coco.jfif']
+const frases4 = [
+   'As vezes é difícil imaginar...', 
+   'Como alguém pode entrar em nossa vida...', 
+   'e mudar tudo.', 
+   'Como alguém pode nos animar...',
+   'mesmo nos nossos piores dias.', 
+   'Como alguém pode ser tão fiel..', 
+   'em um mundo tão infiel.', 
+   'As pessoas dizem que...', 
+   'Todo mundo tem pelo menos 1 grande sorte na vida...', 
+   'E eu acho que a minha já aconteceu...', 
+   'quando encontrei você.', 
+   'Te agradeço por cada momento...', 
+   'Por cada conselho...', 
+   'Por cada ensinamento...', 
+   'por tudo.', 
+   'Prometo te fazer feliz e cuidar de você...', 
+   'No sol ou na chuva...', 
+   'Juntos ou separados...', 
+   'te amarei infinitamente Bianca.', 
+]
+
+const imgs = ['imagens/img13.jfif','imagens/img1.jfif', 'imagens/img2.jfif', 'imagens/img12.jfif', 'imagens/img6.jfif', 'imagens/img4.jfif', 'imagens/img3.jfif', 'imagens/img7.jfif', 'imagens/img5.jfif', 'imagens/img8.jfif', 'imagens/img10.jfif', 'imagens/img11.jfif', 'imagens/img9.jfif', 'imagens/agua-de-coco.jfif']
 
 const imgs2 = [
 'imagens/img1.jfif',
@@ -87,6 +116,10 @@ const frasesFundo3 = [
    'E só de pensar...',
    'o quanto ainda vamos viver...',
    'É de arrepiar.',
+]
+
+const frasesFinal = [
+   'Obrigado por estar comigo.'
 ]
 
 function iniciar(){
@@ -207,13 +240,58 @@ function abrirFundo3(){
       p4.style.opacity = 1;
       imgsFundo3.style.opacity = 1;
       clearInterval()
-   },5500)
+   },5000)
 }
 
+let i4 = 0;
 function abrirFundo4(){
+   p5.style.opacity = 0;
    fundo4.classList.add('ativo')
    fundo4.style.opacity = 1;
+   setTimeout((item) => {
+      p5.textContent = frases4[i4]
+      i4++
+      if(i4 > frases4.length){
+         abrirFundoVideo()
+         clearTimeout()
+         clearInterval()
+      }
+      p5.style.opacity = 1;
+   },5000)
 }
+
+let i5 = 0
+function abrirFundo5(){
+   p6.style.opacity = 0
+   fundo5.classList.add('ativo')
+   fundo5.style.opacity = 1
+   setTimeout((item) => {
+      p6.textContent = frasesFinal[i5]
+      i5++
+      if(i5 > frasesFinal.length){
+         clearInterval()
+         clearTimeout()
+         pFinal.classList.add('ativo')
+      }
+      p6.style.opacity = 1;
+   },5000)
+}
+
+function abrirFundoVideo(){
+   fundoVideo.classList.add('ativo')
+   video.play()
+   audio.pause()
+}
+
+video.addEventListener('ended', () =>  {
+   video.pause()
+   video.muted = true
+   audio2.currentTime = 89;
+   audio2.play();
+   fundoVideo.classList.remove('ativo')
+   abrirFundo5()
+   setInterval(abrirFundo5, 4000)
+});
 
 btnYes.addEventListener('click', iniciar)
 
@@ -241,7 +319,7 @@ btnConfirmar.addEventListener('click', () => {
 
 btnConfirmar2.addEventListener('click', () => {
    abrirFundo3();
-   setInterval(abrirFundo3, 4500)
+   setInterval(abrirFundo3, 4000)
 })
 
 
